@@ -27,8 +27,11 @@ import veil from '../sounds/veil.mp3';
 import wipe from '../sounds/wipe.mp3';
 import zigzag from '../sounds/zig-zag.mp3';
 import Sounds from '../components/Sounds';
+import './App.css';
+import Buttons from '../components/Buttons';
 const soundMapKey = {'q':bubbles,'w':clay,'e':confetti,'r':corona,'t':dottedSpiral,'y':flash1,'u':flash2,'i':flash3,'o':glimmer,'p':moon,'a':pinwheel,'s':piston1,'d':piston2,'f':piston3,'g':prism1,'h':prism2,'j':prism3,'k':splits,'l':squiggle,'z':strike,'x':suspension,'c':timer,'v':ufo,'b':veil,'n':wipe,'m':zigzag};
-const soundMapButton = {'bubbles':bubbles, 'clay':clay,'confetti':confetti,'corona':corona,'dottedSpiral':dottedSpiral,'flash1':flash1,'flash2':flash2,'flash3':flash3,'glimmer':glimmer,'moon':moon,'pinwheel':pinwheel,'piston1':piston1,'piston2':piston2,'piston3':piston3,'prism1':prism1,'prism2':prism2,'prism3':prism3,'splits':splits,'squiggle':squiggle,'strike':strike,'suspension':suspension,'timer':timer,'ufo':ufo,'veil':veil,'wipe':wipe,'zigzag':zigzag};
+const soundMapButton = {'bubbles':bubbles, 'clay':clay,'confetti':confetti,'corona':corona,'dottedSpiral':dottedSpiral,'flash1':flash1,'flash2':flash2,'flash3':flash3,'glimmer':glimmer,'moon':moon,'pinwheel':pinwheel,'piston1':piston1,'piston2':piston2,'piston3':piston3,'prism1':prism1,'prism2':prism2,'prism3':prism3,'splits':splits,'squiggle':squiggle,'suspension':suspension,'timer':timer,'ufo':ufo,'veil':veil,'wipe':wipe,'zigzag':zigzag};
+
 
 class App extends Component {
   constructor(){
@@ -62,7 +65,11 @@ class App extends Component {
     
     return (
       <div className="App">
-       <button onClick={this.play}>bubbles</button>
+      <header>
+        <h1>  Press That Sound Boi </h1>
+        <h3> press any buttons below or press any keys from A-Z to play sounds </h3>
+      </header>
+      <Buttons clickRef={this.play} soundMapButton ={soundMapButton}/>
           {sound}
       </div>
     );
